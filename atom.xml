@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zxzsaga.github.io/"/>
-  <updated>2016-10-31T12:00:00.000Z</updated>
+  <updated>2018-09-04T02:22:46.773Z</updated>
   <id>http://zxzsaga.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Coldplay live 2012 - Yellow</title>
+    <link href="http://zxzsaga.github.io/2016/08/24/Coldplay-live-2012-Yellow/"/>
+    <id>http://zxzsaga.github.io/2016/08/24/Coldplay-live-2012-Yellow/</id>
+    <published>2016-08-24T04:24:33.000Z</published>
+    <updated>2018-09-04T02:22:46.773Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><iframe width="560" height="315" src="https://www.youtube.com/embed/TfBlJ00Df-I" frameborder="0" allowfullscreen></iframe><p style="text-align:center">不能科学上网的话，B站有个带字幕的：</p><center><embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf" flashvars="aid=2136167&page=1" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TfBlJ00Df-I&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+      
+    
+    </summary>
+    
+      <category term="Life" scheme="http://zxzsaga.github.io/categories/Life/"/>
+    
+    
+      <category term="Rock" scheme="http://zxzsaga.github.io/tags/Rock/"/>
+    
+      <category term="Coldplay" scheme="http://zxzsaga.github.io/tags/Coldplay/"/>
+    
+  </entry>
   
   <entry>
     <title>两年</title>

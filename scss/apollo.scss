@@ -7,5 +7,13 @@
 @import "_partial/archive-post-list";
 @import "_partial/post";
 @import "_partial/footer";
-@import "_partial/media-query";
+@import "_partial/mq";
 @import "_partial/copyright";
+
+@font-face {
+    font-family: 'sourcesanspro';
+    src: url('../font/sourcesanspro.woff2') format('woff2'),
+         url('../font/sourcesanspro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
