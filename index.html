@@ -89,12 +89,6 @@
             
             <a class="navbar-item " href="/archives/index.html">Archives</a>
             
-            <a class="navbar-item " href="/categories/LifeStyle/index.html">Lifestyle</a>
-            
-            <a class="navbar-item " href="/categories/Music/index.html">Music</a>
-            
-            <a class="navbar-item " href="/categories/Technology/index.html">Technology</a>
-            
             <a class="navbar-item " href="/categories/Nagging/index.html">Nagging</a>
             
             <a class="navbar-item " href="/about/index.html">About</a>
@@ -122,6 +116,48 @@
 
     <section class="section">
     <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2020/09/03/简洁的方式实现-UI-特效/index.html" itemprop="url">简洁的方式实现 UI 特效</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-09-03T12:27:45.000Z" itemprop="datePublished">9月 3 2020</time>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            2 分钟 读完 (约 240 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p>&#x6700;&#x8FD1;&#x5728;&#x4F7F;&#x7528; Unity URP &#x65F6;&#xFF0C;&#x6478;&#x7D22;&#x51FA;&#x4E86;&#x4E00;&#x5957;&#x7B80;&#x6D01;&#x7684;&#x5236;&#x4F5C; UI &#x7C92;&#x5B50;&#x7279;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Camera, &#x5C06; Render Type &#x8BBE;&#x4E3A; Overlay, Projection &#x8BBE;&#x4E3A; Orthographic, Size &#x5BF9;&#x9F50;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;, Culling Mask &#x8BBE;&#x4E3A; UI.</p>
+<p><img src="/2020-09-03-%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png" alt="overlay_camera"></p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x81EA;&#x9002;&#x5E94;&#x5C4F;&#x5E55;&#x5927;&#x5C0F;&#xFF0C;&#x5C31;&#x81EA;&#x5DF1;&#x5199;&#x4E2A;&#x811A;&#x672C;&#x4FEE;&#x6539; Size.</p>
+<p>&#x7136;&#x540E;&#x7ED9;&#x539F;&#x6765; Render Type &#x4E3A; Base &#x7684; Camera &#x7684; Stack &#x91CC;&#x52A0;&#x4E0A;&#x521A;&#x521A;&#x65B0;&#x5EFA;&#x7684; Camera.</p>
+<p><img src="/2020-09-03-%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/stack_camera.png" alt="stack_camera"></p>
+<p>&#x7136;&#x540E;&#x5728;&#x5C06;&#x653E; UI &#x7684; Canvas &#x7684; Render Mode &#x6539;&#x4E3A; Screen Space - Camera, Render Camera &#x8BBE;&#x4E3A;&#x4E4B;&#x524D;&#x65B0;&#x5EFA;&#x7684; UI &#x4E13;&#x7528;&#x7684; Camera.</p>
+<p><img src="/2020-09-03-%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/canvas.png" alt="canvas"></p>
+<p>&#x7136;&#x540E;&#x628A; Particle System &#x505A;&#x7684;&#x7C92;&#x5B50;&#x7279;&#x6548;&#x6302;&#x5230;&#x60F3;&#x8981;&#x6302;&#x5230;&#x7684; UI &#x5BF9;&#x8C61;&#x4E0B;&#x9762;&#xFF0C;&#x8C03;&#x6574; Start Size &#x5230;&#x591F;&#x5927;&#xFF0C;&#x628A; Layer &#x8BBE;&#x4E3A; UI. &#x60F3;&#x8981;&#x8C03;&#x6574;&#x7C92;&#x5B50;&#x548C; UI &#x7684;&#x524D;&#x540E;&#x5173;&#x7CFB;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x7C92;&#x5B50; Renderer &#x7684; Order in Layer.</p>
+<p><video src="/2020-09-03-&#x7B80;&#x6D01;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;-UI-&#x7279;&#x6548;/particle.webm"></video></p>
+
+    
+    </div>
+    
+    
+</article>
+
+
+
+
     
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
@@ -484,48 +520,6 @@
 <p>&#x53C8;&#x770B;&#x4E86;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x5728;&#x77E5;&#x4E4E;&#x7684;&#x56DE;&#x7B54;&#xFF1A;<a href="https://www.zhihu.com/question/351004410/answer/1091411240" target="_blank" rel="noopener">&#x5982;&#x4F55;&#x8BC4;&#x4EF7;&#x6E38;&#x620F; Disco Elysium&#xFF08;&#x6781;&#x4E50;&#x8FEA;&#x65AF;&#x79D1;&#xFF09;&#xFF1F; - ZAUM&#x7684;&#x56DE;&#x7B54; - &#x77E5;&#x4E4E;</a></p>
 <p>Steam &#x8FD8;&#x6253;&#x6298;&#xFF0C;87&#x5143;&#x3002;</p>
 <p>&#x8D76;&#x7D27;&#x5C31;&#x4E0B;&#x4E86;&#x5355;&#x3002;</p>
-
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020/03/19/花括号提不提行？/index.html" itemprop="url">花括号提不提行？</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-03-19T03:04:27.000Z" itemprop="datePublished">3月 19 2020</time>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 367 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <p>&#x4EE5;&#x524D;&#x5199; JavaScript &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x6D41;&#x7684;&#x98CE;&#x683C;&#x662F;&#x82B1;&#x62EC;&#x53F7;&#x4E0D;&#x63D0;&#x884C;&#xFF1A;</p>
-<p><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unlerp</span>(<span class="hljs-params">a, b, t</span>) </span>{</span><br><span class="line">    assert(b &gt; a);</span><br><span class="line">    <span class="hljs-keyword">return</span> (t - a) / (b - a);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x65E9;&#x671F;&#x7684;&#x65F6;&#x5019; Unity &#x6587;&#x6863;&#x91CC;&#x4F7F;&#x7528; C# &#x65F6;&#x82B1;&#x62EC;&#x53F7;&#x4E5F;&#x4E0D;&#x63D0;&#x884C;&#x3002;<br>&#x4F46;&#x662F; C# &#x7684;&#x4E3B;&#x6D41;&#x98CE;&#x683C;&#x662F;&#x82B1;&#x62EC;&#x53F7;&#x8981;&#x63D0;&#x884C;&#xFF1A;</p>
-<p><figure class="highlight cs hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">LayerManager</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> Player = LayerMask.NameToLayer(<span class="hljs-string">&quot;Player&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> LayerMask PlayerMask = <span class="hljs-number">1</span> &lt;&lt; Player;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x7531;&#x4E8E;&#x6211;&#x6709;&#x65F6;&#x5199; JavaScript&#xFF0C;&#x6709;&#x65F6;&#x5199; C#, &#x6240;&#x4EE5;&#x5C31;&#x5E72;&#x8106;&#x90FD;&#x4E0D;&#x63D0;&#x884C;&#x4E86;&#xFF0C;&#x7EDF;&#x4E00;&#x98CE;&#x683C;&#x3002;<br>&#x4E8E;&#x662F;&#x6211;&#x5199; C# &#x5C31;&#x4F1A;&#x50CF;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
-<p><figure class="highlight cs hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TogglePlacingState</span>(<span class="hljs-params"></span>)</span> {</span><br><span class="line">    <span class="hljs-keyword">bool</span> shouldSettingPosition = !IsPlacing;</span><br><span class="line">    <span class="hljs-keyword">if</span> (shouldSettingPosition) {</span><br><span class="line">        ghostObject.SetActive(<span class="hljs-literal">true</span>);</span><br><span class="line">        StartUpdatePosition();</span><br><span class="line">    } <span class="hljs-keyword">else</span> {</span><br><span class="line">        StopUpdatePosition();</span><br><span class="line">        ghostObject.SetActive(<span class="hljs-literal">false</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x4F46;&#x662F;&#x73B0;&#x5728;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x4EBA;&#x5199; C# &#x65F6;&#x82B1;&#x62EC;&#x53F7;&#x8981;&#x63D0;&#x884C;&#x4E86;&#x3002;<br>&#x6211;&#x81EA;&#x5DF1;&#x867D;&#x7136;&#x559C;&#x6B22;&#x4E0D;&#x63D0;&#x884C;&#xFF0C;&#x4F46;&#x603B;&#x662F;&#x9700;&#x8981;&#x8DDF;&#x522B;&#x4EBA;&#x5408;&#x4F5C;&#x7684;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x5FC5;&#x8981;&#x6539;&#x53D8;&#x4E00;&#x4E0B;&#xFF1A;</p>
-<p><figure class="highlight cs hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">LayerManager</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> Player = LayerMask.NameToLayer(<span class="hljs-string">&quot;Player&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> LayerMask PlayerMask = <span class="hljs-number">1</span> &lt;&lt; Player;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x5176;&#x5B9E;&#x82B1;&#x62EC;&#x53F7;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x4E5F;&#x53EF;&#x80FD;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;&#x4F8B;&#x5982; JavaScript &#x7684;&#x51FD;&#x6570;&#x540D;&#x6D41;&#x884C;&#x5C0F;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x6CD5;&#xFF0C;&#x800C; C# &#x6D41;&#x884C;&#x5927;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x6CD5;&#x3002;</p>
-<p>&#x4E0D;&#x540C;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x8A00;&#x7279;&#x6027;&#x548C;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#xFF0C;&#x5373;&#x4F7F;&#x9700;&#x8981;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x591A;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4E5F;&#x4E0D;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x6700;&#x4E60;&#x60EF;&#x7684;&#x540C;&#x4E00;&#x79CD;&#x98CE;&#x683C;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x5165;&#x4E61;&#x968F;&#x4FD7;&#x5730;&#x6839;&#x636E;&#x5404;&#x81EA;&#x8BED;&#x8A00;&#x7684; style guide &#x6765;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF0C;&#x800C;&#x8FD9;&#x4E5F;&#x6CA1;&#x6709;&#x60F3;&#x8C61;&#x4E2D;&#x90A3;&#x4E48;&#x9EBB;&#x70E6;&#x3002;</p>
 
     
     </div>
