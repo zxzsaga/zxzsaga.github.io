@@ -3,7 +3,6 @@ body, button, input, select, textarea {
   font-family: "Microsoft YaHei", "Georgia", "STZhongsong", serif; }
 
 video {
-  width: 640px;
   height: 360px;
   clear: both;
   display: block;

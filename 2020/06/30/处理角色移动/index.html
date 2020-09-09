@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
 <title>处理角色移动 - Cielmer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,15 +17,15 @@
     <meta name="description" content="&amp;#x5728; Unity &amp;#x91CC;&amp;#x505A;&amp;#x89D2;&amp;#x8272;&amp;#x79FB;&amp;#x52A8;&amp;#x901A;&amp;#x5E38;&amp;#x6709;&amp;#x4E24;&amp;#x79CD;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF1A;  &amp;#x8BBE;&amp;#x7F6E; rigidbody.velocity &amp;#x521A;&amp;#x4F53;&amp;#x901F;&amp;#x5EA6;&amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="处理角色移动">
-<meta property="og:url" content="http://zxzsaga.github.io/2020/06/30/处理角色移动/index.html">
+<meta property="og:url" content="http://zxzsaga.github.io/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/index.html">
 <meta property="og:site_name" content="Cielmer">
 <meta property="og:description" content="&amp;#x5728; Unity &amp;#x91CC;&amp;#x505A;&amp;#x89D2;&amp;#x8272;&amp;#x79FB;&amp;#x52A8;&amp;#x901A;&amp;#x5E38;&amp;#x6709;&amp;#x4E24;&amp;#x79CD;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF1A;  &amp;#x8BBE;&amp;#x7F6E; rigidbody.velocity &amp;#x521A;&amp;#x4F53;&amp;#x901F;&amp;#x5EA6;&amp;#x">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://zxzsaga.github.io/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/character_move.svg">
-<meta property="og:updated_time" content="2020-09-04T02:07:28.824Z">
+<meta property="article:published_time" content="2020-06-30T07:14:27.000Z">
+<meta property="article:modified_time" content="2020-09-09T06:08:14.486Z">
+<meta property="article:author" content="Cielmer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="处理角色移动">
-<meta name="twitter:description" content="&amp;#x5728; Unity &amp;#x91CC;&amp;#x505A;&amp;#x89D2;&amp;#x8272;&amp;#x79FB;&amp;#x52A8;&amp;#x901A;&amp;#x5E38;&amp;#x6709;&amp;#x4E24;&amp;#x79CD;&amp;#x65B9;&amp;#x5F0F;&amp;#xFF1A;  &amp;#x8BBE;&amp;#x7F6E; rigidbody.velocity &amp;#x521A;&amp;#x4F53;&amp;#x901F;&amp;#x5EA6;&amp;#x">
 <meta name="twitter:image" content="http://zxzsaga.github.io/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/character_move.svg">
 
 
@@ -45,7 +45,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css">
 
+
 <link rel="stylesheet" href="/css/style.css">
+
 
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -73,7 +75,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -81,7 +83,7 @@
         <div class="navbar-brand">
             <a class="navbar-item navbar-logo" href="/">
                 
-                <img src="/images/logo.png" alt height="28">
+                <img src="/images/logo.png" alt="" height="28">
                 
             </a>
             <div class="navbar-burger">
@@ -93,17 +95,23 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/categories/Design/index.html">Design</a>
+            <a class="navbar-item "
+               href="/categories/Design/index.html">Design</a>
             
-            <a class="navbar-item " href="/categories/Develop/index.html">Develop</a>
+            <a class="navbar-item "
+               href="/categories/Develop/index.html">Develop</a>
             
-            <a class="navbar-item " href="/categories/Developers/index.html">Developers</a>
+            <a class="navbar-item "
+               href="/categories/Developers/index.html">Developers</a>
             
-            <a class="navbar-item " href="/categories/Nagging/index.html">Nagging</a>
+            <a class="navbar-item "
+               href="/categories/Nagging/index.html">Nagging</a>
             
-            <a class="navbar-item " href="/archives/index.html">Archives</a>
+            <a class="navbar-item "
+               href="/archives/index.html">Archives</a>
             
-            <a class="navbar-item " href="/about/index.html">About</a>
+            <a class="navbar-item "
+               href="/about/index.html">About</a>
             
         </div>
         
@@ -115,7 +123,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/zxzsaga">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/zxzsaga">
                 
                 <i class="fab fa-github"></i>
                 
@@ -150,24 +158,25 @@
         <span class="column is-narrow">
             
             
-            3 分钟 读完 (约 451 字)
+            3 分钟 读完 (约 450 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>&#x5728; Unity &#x91CC;&#x505A;&#x89D2;&#x8272;&#x79FB;&#x52A8;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+        <html><head></head><body><p>&#x5728; Unity &#x91CC;&#x505A;&#x89D2;&#x8272;&#x79FB;&#x52A8;&#x901A;&#x5E38;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
 <ol>
 <li>&#x8BBE;&#x7F6E; <code>rigidbody.velocity</code> &#x521A;&#x4F53;&#x901F;&#x5EA6;&#xFF0C;&#x901A;&#x8FC7;&#x7269;&#x7406;&#x5F15;&#x64CE;&#x8FDB;&#x884C;&#x4F4D;&#x79FB;&#x3002;</li>
 <li>&#x8BBE;&#x7F6E; <code>transform.position</code> &#x6765;&#x6539;&#x53D8;&#x7269;&#x4F53;&#x4F4D;&#x7F6E;&#x3002;</li>
 </ol>
 <p>&#x4F7F;&#x7528;&#x7B2C;1&#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8FC7;&#x521A;&#x4F53;&#x6765;&#x8FD0;&#x52A8;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x81EA;&#x884C;&#x5904;&#x7406;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x89D2;&#x8272;&#x79FB;&#x52A8;&#x4E0D;&#x5BB9;&#x6613;&#x505A;&#x5230;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x3002;&#x6211;&#x503E;&#x5411;&#x4E8E;&#x4F7F;&#x7528;&#x7B2C;2&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x76F4;&#x63A5;&#x4FEE;&#x6539; <code>transform.position</code> &#x6765;&#x8FDB;&#x884C;&#x4F4D;&#x79FB;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x5904;&#x7406;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
 <p>&#x6211;&#x76EE;&#x524D;&#x91C7;&#x7528;&#x7684;&#x79FB;&#x52A8;&#x903B;&#x8F91;&#x662F;&#x8FD9;&#x6837;&#xFF1A;</p>
-<p><figure class="highlight cs hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">[<span class="hljs-meta">RequireComponent(typeof(CapsuleCollider))</span>]</span><br><span class="line"><span class="hljs-keyword">class</span> <span class="hljs-title">CharacterMove</span> : <span class="hljs-title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">float</span> radius;</span><br><span class="line">    <span class="hljs-keyword">float</span> thickness = <span class="hljs-number">0.05f</span>;</span><br><span class="line">    Vector3 localPoint1;</span><br><span class="line">    Vector3 Point1 =&gt; transform.TransformPoint(localPoint1);</span><br><span class="line">    Vector3 localPoint2;</span><br><span class="line">    Vector3 Point2 =&gt; transform.TransformPoint(localPoint2);</span><br><span class="line">    LayerMask layerMask;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Awake</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">var</span> capsuleCollider = GetComponent&lt;CapsuleCollider&gt;();</span><br><span class="line">        radius = capsuleCollider.radius;</span><br><span class="line">        <span class="hljs-keyword">float</span> halfHeight = capsuleCollider.height * <span class="hljs-number">0.5f</span>;</span><br><span class="line">        localPoint1 = capsuleCollider.center + (halfHeight - radius) * Vector3.up;</span><br><span class="line">        localPoint2 = capsuleCollider.center + (halfHeight - radius) * Vector3.down;</span><br><span class="line">        layerMask = LayerManager.playerMoveCastMask;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">var</span> state = GetComponent&lt;Animator&gt;().GetBehaviour&lt;Character_State_Wander&gt;();</span><br><span class="line">        state.SetCharacterMove(<span class="hljs-keyword">this</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Move</span>(<span class="hljs-params">Vector3 direciton, <span class="hljs-keyword">float</span> distance</span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">while</span> (distance &gt; <span class="hljs-number">0</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (direciton == Vector3.zero)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            direciton = direciton.normalized;</span><br><span class="line">            <span class="hljs-keyword">bool</span> hit = Physics.CapsuleCast(Point1, Point2, radius - thickness, direciton, <span class="hljs-keyword">out</span> RaycastHit hitInfo, distance + thickness, layerMask);</span><br><span class="line">            <span class="hljs-keyword">if</span> (hit)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">float</span> actualDis = hitInfo.distance - thickness;</span><br><span class="line">                transform.position += direciton * actualDis;</span><br><span class="line">                Vector3 remain = (distance - actualDis) * direciton;</span><br><span class="line">                Vector3 newMotion = Vector3.ProjectOnPlane(remain, hitInfo.normal);</span><br><span class="line">                <span class="hljs-keyword">if</span> (newMotion.sqrMagnitude &lt; Mathf.Epsilon)</span><br><span class="line">                {</span><br><span class="line">                    distance = <span class="hljs-number">0</span>;</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    direciton = newMotion.normalized;</span><br><span class="line">                    distance = newMotion.magnitude;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                transform.position += direciton * distance;</span><br><span class="line">                distance = <span class="hljs-number">0</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Move</span>(<span class="hljs-params">Vector3 motion</span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">if</span> (motion == Vector3.zero)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        Move(motion.normalized, motion.magnitude);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
-<p>&#x8FD9;&#x4E2A;&#x79FB;&#x52A8;&#x65B9;&#x5F0F;&#x7684;&#x7279;&#x70B9;&#x662F;&#xFF0C;&#x5728;&#x73A9;&#x5BB6;&#x78B0;&#x649E;&#x5230;&#x969C;&#x788D;&#x7269;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x539F;&#x6709;&#x79FB;&#x52A8;&#x5411;&#x91CF;&#x5728;&#x969C;&#x788D;&#x7269;&#x8868;&#x9762;&#x4E0A;&#x7684;&#x5206;&#x91CF;&#x7EE7;&#x7EED;&#x79FB;&#x52A8;&#xFF0C;&#x4E0D;&#x4F1A;&#x5361;&#x4F4F;&#x3002;</p>
-<p><img src="/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/character_move.svg" alt="CharacterMove"></p>
-<p>&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;  <code>thickness</code> &#x53C2;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x5728;&#x89D2;&#x8272;&#x8D34;&#x5408;&#x78B0;&#x649E;&#x4F53;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x51FA;&#x73B0;&#x68C0;&#x6D4B;&#x4E0D;&#x5230;&#x78B0;&#x649E;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x7A7F;&#x5899;&#x3002;&#x4F7F;&#x7528; <code>Thickness</code>&#x53C2;&#x6570;&#x76F8;&#x5F53;&#x4E8E;&#x8BA9;&#x78B0;&#x649E;&#x4F53;&#x53D8;&#x5C0F;&#x4E00;&#x70B9;&#x8FDB;&#x884C;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6700;&#x7EC8;&#x7684;&#x4F4D;&#x79FB;&#x8DDD;&#x79BB;&#x4E0A;&#x8865;&#x507F;&#x56DE;&#x6765;&#x3002;</p>
+<figure class="highlight cs hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">[<span class="hljs-meta">RequireComponent(typeof(CapsuleCollider))</span>]</span><br><span class="line"><span class="hljs-keyword">class</span> <span class="hljs-title">CharacterMove</span> : <span class="hljs-title">MonoBehaviour</span></span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">float</span> radius;</span><br><span class="line">    <span class="hljs-keyword">float</span> thickness = <span class="hljs-number">0.05f</span>;</span><br><span class="line">    Vector3 localPoint1;</span><br><span class="line">    Vector3 Point1 =&gt; transform.TransformPoint(localPoint1);</span><br><span class="line">    Vector3 localPoint2;</span><br><span class="line">    Vector3 Point2 =&gt; transform.TransformPoint(localPoint2);</span><br><span class="line">    LayerMask layerMask;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Awake</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">var</span> capsuleCollider = GetComponent&lt;CapsuleCollider&gt;();</span><br><span class="line">        radius = capsuleCollider.radius;</span><br><span class="line">        <span class="hljs-keyword">float</span> halfHeight = capsuleCollider.height * <span class="hljs-number">0.5f</span>;</span><br><span class="line">        localPoint1 = capsuleCollider.center + (halfHeight - radius) * Vector3.up;</span><br><span class="line">        localPoint2 = capsuleCollider.center + (halfHeight - radius) * Vector3.down;</span><br><span class="line">        layerMask = LayerManager.playerMoveCastMask;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">var</span> state = GetComponent&lt;Animator&gt;().GetBehaviour&lt;Character_State_Wander&gt;();</span><br><span class="line">        state.SetCharacterMove(<span class="hljs-keyword">this</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Move</span>(<span class="hljs-params">Vector3 direciton, <span class="hljs-keyword">float</span> distance</span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">while</span> (distance &gt; <span class="hljs-number">0</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">if</span> (direciton == Vector3.zero)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            direciton = direciton.normalized;</span><br><span class="line">            <span class="hljs-keyword">bool</span> hit = Physics.CapsuleCast(Point1, Point2, radius - thickness, direciton, <span class="hljs-keyword">out</span> RaycastHit hitInfo, distance + thickness, layerMask);</span><br><span class="line">            <span class="hljs-keyword">if</span> (hit)</span><br><span class="line">            {</span><br><span class="line">                <span class="hljs-keyword">float</span> actualDis = hitInfo.distance - thickness;</span><br><span class="line">                transform.position += direciton * actualDis;</span><br><span class="line">                Vector3 remain = (distance - actualDis) * direciton;</span><br><span class="line">                Vector3 newMotion = Vector3.ProjectOnPlane(remain, hitInfo.normal);</span><br><span class="line">                <span class="hljs-keyword">if</span> (newMotion.sqrMagnitude &lt; Mathf.Epsilon)</span><br><span class="line">                {</span><br><span class="line">                    distance = <span class="hljs-number">0</span>;</span><br><span class="line">                }</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                    direciton = newMotion.normalized;</span><br><span class="line">                    distance = newMotion.magnitude;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">else</span></span><br><span class="line">            {</span><br><span class="line">                transform.position += direciton * distance;</span><br><span class="line">                distance = <span class="hljs-number">0</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Move</span>(<span class="hljs-params">Vector3 motion</span>)</span></span><br><span class="line"><span class="hljs-function"></span>    {</span><br><span class="line">        <span class="hljs-keyword">if</span> (motion == Vector3.zero)</span><br><span class="line">        {</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line">        Move(motion.normalized, motion.magnitude);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<p>&#x8FD9;&#x4E2A;&#x79FB;&#x52A8;&#x65B9;&#x5F0F;&#x7684;&#x7279;&#x70B9;&#x662F;&#xFF0C;&#x5728;&#x73A9;&#x5BB6;&#x78B0;&#x649E;&#x5230;&#x969C;&#x788D;&#x7269;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x539F;&#x6709;&#x79FB;&#x52A8;&#x5411;&#x91CF;&#x5728;&#x969C;&#x788D;&#x7269;&#x8868;&#x9762;&#x4E0A;&#x7684;&#x5206;&#x91CF;&#x7EE7;&#x7EED;&#x79FB;&#x52A8;&#xFF0C;&#x4E0D;&#x4F1A;&#x5361;&#x4F4F;&#x3002;</p>
+<p><img src="/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/character_move.svg" alt></p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;  <code>thickness</code> &#x53C2;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x5728;&#x89D2;&#x8272;&#x8D34;&#x5408;&#x78B0;&#x649E;&#x4F53;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x51FA;&#x73B0;&#x68C0;&#x6D4B;&#x4E0D;&#x5230;&#x78B0;&#x649E;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x7A7F;&#x5899;&#x3002;&#x4F7F;&#x7528; <code>Thickness</code>&#x53C2;&#x6570;&#x76F8;&#x5F53;&#x4E8E;&#x8BA9;&#x78B0;&#x649E;&#x4F53;&#x53D8;&#x5C0F;&#x4E00;&#x70B9;&#x8FDB;&#x884C;&#x78B0;&#x649E;&#x68C0;&#x6D4B;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6700;&#x7EC8;&#x7684;&#x4F4D;&#x79FB;&#x8DDD;&#x79BB;&#x4E0A;&#x8865;&#x507F;&#x56DE;&#x6765;&#x3002;</p>
+</body></html>
     
     </div>
     
@@ -175,12 +184,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2020/07/08/搜索引擎于2020年/index.html">搜索引擎于2020年</a>
+            <a href="/2020/07/08/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BA%8E2020%E5%B9%B4/index.html">搜索引擎于2020年</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2020/05/18/Animator-Controller-与状态机/index.html">Animator Controller 与状态机</a>
+            <a href="/2020/05/18/Animator-Controller-%E4%B8%8E%E7%8A%B6%E6%80%81%E6%9C%BA/index.html">Animator Controller 与状态机</a>
             
         </span>
     </div>
@@ -197,7 +206,8 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 &copy; 2020 Cielmer&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -206,14 +216,14 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="渝ICP备19006622号-1" href="http://www.beian.miit.gov.cn">
+                <a class="column is-narrow has-text-black" title="渝ICP备19006622号-1" target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">
                     
                     渝ICP备19006622号-1
                     
                 </a>
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/zxzsaga">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/zxzsaga">
                     
                     GitHub
                     
@@ -232,7 +242,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -368,14 +378,16 @@
     
 
 
+
 <script src="/js/script.js"></script>
+
 
     
     <div class="searchbox ins-search">
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -398,7 +410,9 @@
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
     
 </body>
 </html>

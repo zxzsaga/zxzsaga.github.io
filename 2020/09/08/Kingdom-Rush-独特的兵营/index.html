@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
-<title>简洁的方式实现 UI 特效 - Cielmer</title>
+<title>Kingdom Rush 独特的兵营 - Cielmer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -14,22 +14,19 @@
 
 
 
-    <meta name="description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x4F7F;&amp;#x7528; Unity URP &amp;#x65F6;&amp;#xFF0C;&amp;#x6478;&amp;#x7D22;&amp;#x51FA;&amp;#x4E86;&amp;#x4E00;&amp;#x5957;&amp;#x7B80;&amp;#x6D01;&amp;#x7684;&amp;#x5236;&amp;#x4F5C; UI &amp;#x7C92;&amp;#x5B50;&amp;#x7279;&amp;#x6548;&amp;#x7684;&amp;">
-<meta name="keywords" content="Unity">
+    <meta name="description" content="Kingdom Rush &amp;#x4E2D;&amp;#x6709;&amp;#x4E00;&amp;#x4E2A;&amp;#x673A;&amp;#x5236;&amp;#x662F;&amp;#x5176;&amp;#x4ED6;&amp;#x5854;&amp;#x9632;&amp;#x6E38;&amp;#x620F;&amp;#x4E2D;&amp;#x6CA1;&amp;#x6709;&amp;#x7684;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5B83;&amp;#x7684;&amp;#x5175;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简洁的方式实现 UI 特效">
-<meta property="og:url" content="http://zxzsaga.github.io/2020/09/03/2020-09-03-简洁的方式实现-UI-特效/index.html">
+<meta property="og:title" content="Kingdom Rush 独特的兵营">
+<meta property="og:url" content="http://zxzsaga.github.io/2020/09/08/Kingdom-Rush-%E7%8B%AC%E7%89%B9%E7%9A%84%E5%85%B5%E8%90%A5/index.html">
 <meta property="og:site_name" content="Cielmer">
-<meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x4F7F;&amp;#x7528; Unity URP &amp;#x65F6;&amp;#xFF0C;&amp;#x6478;&amp;#x7D22;&amp;#x51FA;&amp;#x4E86;&amp;#x4E00;&amp;#x5957;&amp;#x7B80;&amp;#x6D01;&amp;#x7684;&amp;#x5236;&amp;#x4F5C; UI &amp;#x7C92;&amp;#x5B50;&amp;#x7279;&amp;#x6548;&amp;#x7684;&amp;">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png">
-<meta property="og:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/stack_camera.png">
-<meta property="og:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/canvas.png">
-<meta property="og:updated_time" content="2020-09-07T15:28:45.322Z">
+<meta property="og:description" content="Kingdom Rush &amp;#x4E2D;&amp;#x6709;&amp;#x4E00;&amp;#x4E2A;&amp;#x673A;&amp;#x5236;&amp;#x662F;&amp;#x5176;&amp;#x4ED6;&amp;#x5854;&amp;#x9632;&amp;#x6E38;&amp;#x620F;&amp;#x4E2D;&amp;#x6CA1;&amp;#x6709;&amp;#x7684;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x5B83;&amp;#x7684;&amp;#x5175;&amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zxzsaga.github.io/2020/09/08/Kingdom-Rush-%E7%8B%AC%E7%89%B9%E7%9A%84%E5%85%B5%E8%90%A5/kingdom_rush_barracks.jpg">
+<meta property="article:published_time" content="2020-09-08T08:57:22.000Z">
+<meta property="article:modified_time" content="2020-09-09T06:16:40.723Z">
+<meta property="article:author" content="Cielmer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简洁的方式实现 UI 特效">
-<meta name="twitter:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x4F7F;&amp;#x7528; Unity URP &amp;#x65F6;&amp;#xFF0C;&amp;#x6478;&amp;#x7D22;&amp;#x51FA;&amp;#x4E86;&amp;#x4E00;&amp;#x5957;&amp;#x7B80;&amp;#x6D01;&amp;#x7684;&amp;#x5236;&amp;#x4F5C; UI &amp;#x7C92;&amp;#x5B50;&amp;#x7279;&amp;#x6548;&amp;#x7684;&amp;">
-<meta name="twitter:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png">
+<meta name="twitter:image" content="http://zxzsaga.github.io/2020/09/08/Kingdom-Rush-%E7%8B%AC%E7%89%B9%E7%9A%84%E5%85%B5%E8%90%A5/kingdom_rush_barracks.jpg">
 
 
 
@@ -48,7 +45,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css">
 
+
 <link rel="stylesheet" href="/css/style.css">
+
 
 <script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
@@ -76,7 +75,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.1.1"></head>
 <body>
     
 <nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
@@ -84,7 +83,7 @@
         <div class="navbar-brand">
             <a class="navbar-item navbar-logo" href="/">
                 
-                <img src="/images/logo.png" alt height="28">
+                <img src="/images/logo.png" alt="" height="28">
                 
             </a>
             <div class="navbar-burger">
@@ -96,17 +95,23 @@
         
         <div class="navbar-menu navbar-start">
             
-            <a class="navbar-item " href="/categories/Design/index.html">Design</a>
+            <a class="navbar-item "
+               href="/categories/Design/index.html">Design</a>
             
-            <a class="navbar-item " href="/categories/Develop/index.html">Develop</a>
+            <a class="navbar-item "
+               href="/categories/Develop/index.html">Develop</a>
             
-            <a class="navbar-item " href="/categories/Developers/index.html">Developers</a>
+            <a class="navbar-item "
+               href="/categories/Developers/index.html">Developers</a>
             
-            <a class="navbar-item " href="/categories/Nagging/index.html">Nagging</a>
+            <a class="navbar-item "
+               href="/categories/Nagging/index.html">Nagging</a>
             
-            <a class="navbar-item " href="/archives/index.html">Archives</a>
+            <a class="navbar-item "
+               href="/archives/index.html">Archives</a>
             
-            <a class="navbar-item " href="/about/index.html">About</a>
+            <a class="navbar-item "
+               href="/about/index.html">About</a>
             
         </div>
         
@@ -118,7 +123,7 @@
             
             
             
-            <a class="navbar-item" title="GitHub" href="https://github.com/zxzsaga">
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/zxzsaga">
                 
                 <i class="fab fa-github"></i>
                 
@@ -134,48 +139,45 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            简洁的方式实现 UI 特效
+            Kingdom Rush 独特的兵营
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <time datetime="2020-09-03T12:27:45.000Z" itemprop="datePublished">9月 3 2020</time>
+                <time datetime="2020-09-08T08:57:22.000Z" itemprop="datePublished">9月 8 2020</time>
             
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Develop/">Develop</a>
+            <a class="article-category-link" href="/categories/Design/">Design</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            2 分钟 读完 (约 240 字)
+            2 分钟 读完 (约 302 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>&#x6700;&#x8FD1;&#x5728;&#x4F7F;&#x7528; Unity URP &#x65F6;&#xFF0C;&#x6478;&#x7D22;&#x51FA;&#x4E86;&#x4E00;&#x5957;&#x7B80;&#x6D01;&#x7684;&#x5236;&#x4F5C; UI &#x7C92;&#x5B50;&#x7279;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
-<p>&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Camera, &#x5C06; Render Type &#x8BBE;&#x4E3A; Overlay, Projection &#x8BBE;&#x4E3A; Orthographic, Size &#x5BF9;&#x9F50;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;, Culling Mask &#x8BBE;&#x4E3A; UI.</p>
-<p><img src="/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png" alt="overlay_camera"></p>
-<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x81EA;&#x9002;&#x5E94;&#x5C4F;&#x5E55;&#x5927;&#x5C0F;&#xFF0C;&#x5C31;&#x81EA;&#x5DF1;&#x5199;&#x4E2A;&#x811A;&#x672C;&#x4FEE;&#x6539; Size.</p>
-<p>&#x7136;&#x540E;&#x7ED9;&#x539F;&#x6765; Render Type &#x4E3A; Base &#x7684; Camera &#x7684; Stack &#x91CC;&#x52A0;&#x4E0A;&#x521A;&#x521A;&#x65B0;&#x5EFA;&#x7684; Camera.</p>
-<p><img src="/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/stack_camera.png" alt="stack_camera"></p>
-<p>&#x7136;&#x540E;&#x5728;&#x5C06;&#x653E; UI &#x7684; Canvas &#x7684; Render Mode &#x6539;&#x4E3A; Screen Space - Camera, Render Camera &#x8BBE;&#x4E3A;&#x4E4B;&#x524D;&#x65B0;&#x5EFA;&#x7684; UI &#x4E13;&#x7528;&#x7684; Camera.</p>
-<p><img src="/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/canvas.png" alt="canvas"></p>
-<p>&#x7136;&#x540E;&#x628A; Particle System &#x505A;&#x7684;&#x7C92;&#x5B50;&#x7279;&#x6548;&#x6302;&#x5230;&#x60F3;&#x8981;&#x6302;&#x5230;&#x7684; UI &#x5BF9;&#x8C61;&#x4E0B;&#x9762;&#xFF0C;&#x8C03;&#x6574; Start Size &#x5230;&#x591F;&#x5927;&#xFF0C;&#x628A; Layer &#x8BBE;&#x4E3A; UI. &#x60F3;&#x8981;&#x8C03;&#x6574;&#x7C92;&#x5B50;&#x548C; UI &#x7684;&#x524D;&#x540E;&#x5173;&#x7CFB;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x7C92;&#x5B50; Renderer &#x7684; Order in Layer.</p>
-<p><video src="/2020/09/03/&#x7B80;&#x6D01;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;-UI-&#x7279;&#x6548;/particle.webm" controls="controls"></video></p>
+        <html><head></head><body><p><img src="/2020/09/08/Kingdom-Rush-%E7%8B%AC%E7%89%B9%E7%9A%84%E5%85%B5%E8%90%A5/kingdom_rush_barracks.jpg" alt></p>
+<p>Kingdom Rush &#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x673A;&#x5236;&#x662F;&#x5176;&#x4ED6;&#x5854;&#x9632;&#x6E38;&#x620F;&#x4E2D;&#x6CA1;&#x6709;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x5B83;&#x7684;&#x5175;&#x8425;(Barracks).</p>
+<a id="more"></a>
 
-    
-    </div>
-    
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Unity/">#Unity</a></span>
+<p>&#x5175;&#x8425;&#x662F;&#x4EE5;&#x5854;&#x7684;&#x5F62;&#x5F0F;&#x51FA;&#x73B0;&#x7684;&#xFF0C;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x653B;&#x51FB;&#x6548;&#x679C;&#xFF0C;&#x53EF;&#x4EE5;&#x751F;&#x4EA7;3&#x4E2A;&#x58EB;&#x5175;&#x4E0E;&#x654C;&#x4EBA;&#x640F;&#x6597;&#xFF0C;&#x58EB;&#x5175;&#x6B7B;&#x540E;&#x9694;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x91CD;&#x65B0;&#x751F;&#x4EA7;&#x65B0;&#x7684;&#x58EB;&#x5175;&#x3002;</p>
+<p>Kingdom Rush &#x4E2D;&#x7684;&#x5854;&#x662F;&#x4E0D;&#x80FD;&#x6321;&#x8DEF;&#x7684;&#xFF0C;&#x4E5F;&#x5F88;&#x5C11;&#x6709;&#x51CF;&#x901F;&#x6548;&#x679C;&#x7684;&#x624B;&#x6BB5;&#xFF0C;&#x4F46;&#x58EB;&#x5175;&#x53EF;&#x4EE5;&#x62E6;&#x622A;&#x654C;&#x4EBA;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x963B;&#x6321;&#x654C;&#x4EBA;&#x7684;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x70B9;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x58EB;&#x5175;&#x4F1A;&#x627E;&#x4E00;&#x4E2A;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x5185;&#x7684;&#x654C;&#x4EBA;&#xFF0C;&#x8D70;&#x8FC7;&#x53BB;&#x4E0E;&#x4E4B;&#x640F;&#x6597;&#xFF0C;&#x8D70;&#x8DEF;&#x8FC7;&#x7A0B;&#x4E2D;&#x654C;&#x4EBA;&#x505C;&#x4E0B;&#x6765;&#x7B49;&#x58EB;&#x5175;&#x3002;</li>
+<li>&#x8FD1;&#x6218;&#x654C;&#x4EBA;&#x4E0D;&#x4F1A;&#x653B;&#x51FB;&#x6B63;&#x5728;&#x4E0E;&#x522B;&#x4EBA;&#x640F;&#x6597;&#x7684;&#x58EB;&#x5175;&#xFF0C;&#x88C5;&#x4F5C;&#x6CA1;&#x770B;&#x5230;&#x7EE7;&#x7EED;&#x5F80;&#x524D;&#x8D70;&#x3002;</li>
+<li>&#x8FDC;&#x7A0B;&#x654C;&#x4EBA;&#x4F1A;&#x653B;&#x51FB;&#x6B63;&#x5728;&#x4E0E;&#x522B;&#x4EBA;&#x640F;&#x6597;&#x7684;&#x58EB;&#x5175;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x6709;&#x4E00;&#x6CE2;&#x8FDC;&#x7A0B;&#x654C;&#x4EBA;&#x96C6;&#x706B;&#x79D2;&#x58EB;&#x5175;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+</ul>
+<p>&#x5BFC;&#x81F4;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x5B83;&#x5E76;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x628A;&#x6240;&#x6709;&#x654C;&#x4EBA;&#x6321;&#x4F4F;&#xFF0C;&#x800C;&#x4E14;&#x6321;&#x8DEF;&#x6548;&#x679C;&#x4E5F;&#x4E0D;&#x662F;&#x5F88;&#x7A33;&#x5B9A;&#xFF0C;&#x9700;&#x8981;&#x7ECF;&#x5E38;&#x6CE8;&#x610F;&#x5B83;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+</body></html>
     
     </div>
     
@@ -183,12 +185,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2020/09/07/使用-Unity-的细枝末节/index.html">使用 Unity 的细枝末节</a>
+            <a href="/2120/09/07/%E4%BD%BF%E7%94%A8-Unity-%E7%9A%84%E7%BB%86%E6%9E%9D%E6%9C%AB%E8%8A%82/index.html">使用 Unity 的细枝末节</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2020/08/21/从第九世代游戏机看未来/index.html">从第九世代游戏机看未来</a>
+            <a href="/2020/09/07/%E6%89%A9%E5%B1%95-Button-%E5%BA%94%E8%AF%A5%E7%94%A8%E7%BB%A7%E6%89%BF/index.html">扩展 Button 应该用继承</a>
             
         </span>
     </div>
@@ -205,7 +207,8 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 &copy; 2020 Cielmer&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
             <div class="column is-hidden-mobile"></div>
 
@@ -214,14 +217,14 @@
                 <div class="columns is-mobile is-multiline is-centered">
                 
                     
-                <a class="column is-narrow has-text-black" title="渝ICP备19006622号-1" href="http://www.beian.miit.gov.cn">
+                <a class="column is-narrow has-text-black" title="渝ICP备19006622号-1" target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">
                     
                     渝ICP备19006622号-1
                     
                 </a>
                 
                     
-                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/zxzsaga">
+                <a class="column is-narrow has-text-black" title="GitHub" target="_blank" rel="noopener" href="https://github.com/zxzsaga">
                     
                     GitHub
                     
@@ -240,7 +243,7 @@
 <!-- test if the browser is outdated -->
 <div id="outdated">
     <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
     <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
@@ -376,14 +379,16 @@
     
 
 
+
 <script src="/js/script.js"></script>
+
 
     
     <div class="searchbox ins-search">
     <div class="searchbox-mask"></div>
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -406,7 +411,9 @@
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
+
 <script src="/js/insight.js"></script>
+
     
 </body>
 </html>

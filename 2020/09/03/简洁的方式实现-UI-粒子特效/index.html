@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Animator Controller 与状态机 - Cielmer</title>
+<title>简洁的方式实现 UI 粒子特效 - Cielmer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
@@ -14,17 +14,21 @@
 
 
 
-    <meta name="description" content="&amp;#x524D;&amp;#x4E00;&amp;#x9635;&amp;#x5B50;&amp;#x770B;&amp;#x5230;&amp;#x4E00;&amp;#x4E2A; Unity &amp;#x6559;&amp;#x5B66; youtuber &amp;#x5728;&amp;#x7528;&amp;#x72B6;&amp;#x6001;&amp;#x673A;&amp;#x505A;&amp;#x89D2;&amp;#x8272;&amp;#x63A7;&amp;#x5236;&amp;#x7684;&amp;#x65F6;&amp;#x5019">
+    <meta name="description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x4F7F;&amp;#x7528; Unity URP &amp;#x65F6;&amp;#xFF0C;&amp;#x6478;&amp;#x7D22;&amp;#x51FA;&amp;#x4E86;&amp;#x4E00;&amp;#x5957;&amp;#x7B80;&amp;#x6D01;&amp;#x7684;&amp;#x5236;&amp;#x4F5C; UI &amp;#x7C92;&amp;#x5B50;&amp;#x7279;&amp;#x6548;&amp;#x7684;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Animator Controller 与状态机">
-<meta property="og:url" content="http://zxzsaga.github.io/2020/05/18/Animator-Controller-%E4%B8%8E%E7%8A%B6%E6%80%81%E6%9C%BA/index.html">
+<meta property="og:title" content="简洁的方式实现 UI 粒子特效">
+<meta property="og:url" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88/index.html">
 <meta property="og:site_name" content="Cielmer">
-<meta property="og:description" content="&amp;#x524D;&amp;#x4E00;&amp;#x9635;&amp;#x5B50;&amp;#x770B;&amp;#x5230;&amp;#x4E00;&amp;#x4E2A; Unity &amp;#x6559;&amp;#x5B66; youtuber &amp;#x5728;&amp;#x7528;&amp;#x72B6;&amp;#x6001;&amp;#x673A;&amp;#x505A;&amp;#x89D2;&amp;#x8272;&amp;#x63A7;&amp;#x5236;&amp;#x7684;&amp;#x65F6;&amp;#x5019">
+<meta property="og:description" content="&amp;#x6700;&amp;#x8FD1;&amp;#x5728;&amp;#x4F7F;&amp;#x7528; Unity URP &amp;#x65F6;&amp;#xFF0C;&amp;#x6478;&amp;#x7D22;&amp;#x51FA;&amp;#x4E86;&amp;#x4E00;&amp;#x5957;&amp;#x7B80;&amp;#x6D01;&amp;#x7684;&amp;#x5236;&amp;#x4F5C; UI &amp;#x7C92;&amp;#x5B50;&amp;#x7279;&amp;#x6548;&amp;#x7684;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-18T09:44:33.000Z">
-<meta property="article:modified_time" content="2020-09-04T02:07:55.417Z">
+<meta property="og:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png">
+<meta property="og:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/stack_camera.png">
+<meta property="article:published_time" content="2020-09-03T12:27:45.000Z">
+<meta property="article:modified_time" content="2020-09-09T06:16:21.146Z">
 <meta property="article:author" content="Cielmer">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zxzsaga.github.io/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png">
 
 
 
@@ -137,13 +141,13 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Animator Controller 与状态机
+            简洁的方式实现 UI 粒子特效
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <time datetime="2020-05-18T09:44:33.000Z" itemprop="datePublished">5月 18 2020</time>
+                <time datetime="2020-09-03T12:27:45.000Z" itemprop="datePublished">9月 3 2020</time>
             
         </span>
         
@@ -156,20 +160,31 @@
         <span class="column is-narrow">
             
             
-            6 分钟 读完 (约 860 字)
+            2 分钟 读完 (约 235 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>&#x524D;&#x4E00;&#x9635;&#x5B50;&#x770B;&#x5230;&#x4E00;&#x4E2A; Unity &#x6559;&#x5B66; youtuber &#x5728;<a href="https://www.youtube.com/watch?v=tjV7E9WITKQ&amp;list=PLWYGofN_jX5BupV2xLjU1HUvujl_yDIN6&amp;index=12" target="_blank" rel="noopener">&#x7528;&#x72B6;&#x6001;&#x673A;&#x505A;&#x89D2;&#x8272;&#x63A7;&#x5236;</a>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ADF;&#x7136;&#x76F4;&#x63A5;&#x4F7F;&#x7528; Animator Controller &#xFF08;&#x4EE5;&#x4E0B;&#x79F0;&#x4E3A;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#xFF09;&#x4F5C;&#x4E3A;&#x89D2;&#x8272;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4ECE;&#x6CA1;&#x60F3;&#x8FC7;&#x4E5F;&#x4E0D;&#x6562;&#x5C1D;&#x8BD5;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x6211;&#x4E5F;&#x559C;&#x6B22;&#x7528;&#x72B6;&#x6001;&#x673A;&#x6765;&#x505A;&#x89D2;&#x8272;&#x63A7;&#x5236;&#xFF0C;&#x4F46;&#x4E00;&#x822C;&#x662F;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x7528;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x673A;&#x53BB;&#x786E;&#x5B9A;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x3002;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x64AD;&#x52A8;&#x753B;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5373;&#x4F7F;&#x54EA;&#x5929; Unity &#x51FA;&#x4E86;&#x65B0;&#x7684;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x4E5F;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x628A;&#x5B83;&#x6362;&#x6389;&#x3002;</p>
-<p>&#x5176;&#x5B9E;&#x4EE5;&#x524D;&#x5728;&#x505A;&#x9879;&#x76EE;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x66FE;&#x5BF9;&#x4E8E;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x548C;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x5982;&#x4F55;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#x611F;&#x5230;&#x56F0;&#x60D1;&#x3002;&#x5982;&#x679C;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x4E5F;&#x4F7F;&#x7528;&#x4E00;&#x4E9B; conditions &#x6765;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x5207;&#x6362;&#xFF0C;&#x90A3;&#x4E48;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x548C;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x8FD9;&#x5728;&#x505A;&#x7F51;&#x7EDC;&#x6E38;&#x620F;&#x7684;&#x65F6;&#x5019;&#x5C24;&#x5176;&#x660E;&#x663E;&#xFF0C;&#x5373;&#x4FBF;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x540C;&#x6B65;&#x4E86;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x7684;&#x72B6;&#x6001;&#x7531;&#x4E8E;&#x4E00;&#x4E9B; timing &#x7684;&#x5DEE;&#x5F02;&#x4E5F;&#x4F1A;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x9664;&#x975E;&#x518D;&#x5355;&#x72EC;&#x540C;&#x6B65;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x548C;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x5404;&#x81EA;&#x5355;&#x72EC;&#x540C;&#x6B65;&#xFF0C;&#x4F46;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x65B9;&#x6848;&#x5E76;&#x4E0D;&#x5408;&#x9002;&#xFF08;&#x4E5F;&#x8003;&#x8651;&#x8FC7;&#x53EA;&#x6709;&#x670D;&#x52A1;&#x7AEF;&#x4F7F;&#x7528;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7528;&#x7C7B;&#x4F3C; legacy &#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x64AD;&#x653E;&#x52A8;&#x753B;&#xFF0C;&#x4E5F;&#x4E0D;&#x597D;&#xFF09;&#x3002;</p>
-<p>&#x540E;&#x6765;&#x5F97;&#x51FA;&#x7684;&#x65B9;&#x6848;&#x662F;&#x4E00;&#x5207;&#x4EE5;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x4E3A;&#x51C6;&#xFF0C;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x51B3;&#x5B9A;&#x52A8;&#x753B;&#x64AD;&#x653E;&#xFF0C;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#xFF0C;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x4E5F;&#x80FD;&#x72EC;&#x7ACB;&#x5B8C;&#x6210;&#x6574;&#x4E2A;&#x6E38;&#x620F;&#x903B;&#x8F91;&#x3002;&#x8FD9;&#x6837;&#x5982;&#x679C;&#x60F3;&#x8981;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x8868;&#x73B0;&#x597D;&#xFF0C;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x5E94;&#x8BE5;&#x77E5;&#x6653;&#x4E00;&#x4E9B;&#x52A8;&#x753B;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x662F;&#x5728;&#x7F16;&#x8F91;&#x5668;&#x9636;&#x6BB5;&#xFF08;&#x800C;&#x975E;&#x8FD0;&#x884C;&#x65F6;&#x9636;&#x6BB5;&#xFF09;&#x5C31;&#x51C6;&#x5907;&#x597D;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#x548C;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x90FD;&#x5E94;&#x8BE5;&#x77E5;&#x6653;&#x653B;&#x51FB;&#x52A8;&#x753B;&#x7684;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x662F;&#x591A;&#x4E45;&#xFF0C;&#x800C;&#x4E0D;&#x4E92;&#x76F8;&#x4F9D;&#x8D56;&#x3002;&#x4E3A;&#x4E86;&#x7F51;&#x7EDC;&#x540C;&#x6B65;&#xFF0C;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5E94;&#x8BE5;&#x80FD;&#x4ECE;&#x4EFB;&#x610F;&#x52A8;&#x753B;&#x5207;&#x6362;&#x5230;&#x4EFB;&#x610F;&#x52A8;&#x753B;&#xFF0C;&#x8FD9;&#x6837;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5B9E;&#x9645;&#x9000;&#x5316;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x52A8;&#x753B;&#x64AD;&#x653E;&#x5668;&#x3002;</p>
-<p>&#x6211;&#x60F3;&#x5E94;&#x8BE5;&#x5F88;&#x591A;&#x7F51;&#x7EDC;&#x6E38;&#x620F;&#x90FD;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x3002;</p>
-<p>&#x4F46;&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x673A;&#x52A8;&#x4F5C;&#x6E38;&#x620F;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x903B;&#x8F91;&#x9AD8;&#x5EA6;&#x4F9D;&#x8D56;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x4E00;&#x4E9B;&#x8FD1;&#x51E0;&#x5E74;&#x5174;&#x8D77;&#x7684; physics based &#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x5462;&#xFF1F;&#x8FD9;&#x65F6;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x8FD8;&#x662F;&#x9700;&#x8981;&#x53C2;&#x4E0E;&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x3002;&#x800C;&#x5F00;&#x5934;&#x8BF4;&#x7684;&#x90A3;&#x4F4D; youtuber &#x66F4;&#x6FC0;&#x8FDB;&#x4E86;&#x4E00;&#x6B65;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x4F5C;&#x4E3A;&#x903B;&#x8F91;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x4EE5;&#x81F4;&#x4E8E;&#x7406;&#x8BBA;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x67D0;&#x4E9B;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x673A;&#x8282;&#x70B9;&#x751A;&#x81F3;&#x53EF;&#x80FD;&#x4E0D;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x3002;&#x4EE5;&#x524D; <code>StateMachineBehaviour</code> &#x521A;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EE5;&#x4E3A;&#x53EA;&#x662F;&#x7528;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x52A8;&#x753B;&#x8BA1;&#x7B97;&#xFF0C;&#x6CA1;&#x60F3;&#x5230;&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8FD0;&#x884C;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x3002;</p>
-<p>&#x6211;&#x672C;&#x6765;&#x4E5F;&#x4E0D;&#x662F;&#x5F88;&#x786E;&#x5B9A;&#x50CF;&#x4ED6;&#x8FD9;&#x6837;&#x7528;&#x4F1A;&#x4E0D;&#x4F1A;&#x6709;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x540E;&#x6765;&#x770B;&#x5230;  <code>CinemachineStateDrivenCamera</code>&#x7EC4;&#x4EF6;&#x91CC;&#xFF0C;Unity &#x5C06; Animator Controller &#x4F5C;&#x4E3A;&#x4E0D;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x7684;&#x7EAF;&#x72B6;&#x6001;&#x673A;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x6211;&#x60F3; Unity &#x662F;&#x503E;&#x5411;&#x4E8E;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x7684;&#x3002;</p>
+        <html><head></head><body><p><video src="/2020/09/03/&#x7B80;&#x6D01;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;-UI-&#x7279;&#x6548;/particle.webm" controls="controls"></video></p>
+<p>&#x6700;&#x8FD1;&#x5728;&#x4F7F;&#x7528; Unity URP &#x65F6;&#xFF0C;&#x6478;&#x7D22;&#x51FA;&#x4E86;&#x4E00;&#x5957;&#x7B80;&#x6D01;&#x7684;&#x5236;&#x4F5C; UI &#x7C92;&#x5B50;&#x7279;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<a id="more"></a>
 
+<p>&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Camera, &#x5C06; Render Type &#x8BBE;&#x4E3A; Overlay, Projection &#x8BBE;&#x4E3A; Orthographic, Size &#x5BF9;&#x9F50;&#x5C4F;&#x5E55;&#x5C3A;&#x5BF8;, Culling Mask &#x8BBE;&#x4E3A; UI.</p>
+<p><img src="/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/overlay_camera.png" alt="overlay_camera"></p>
+<p>&#x4E3A;&#x4E86;&#x81EA;&#x9002;&#x5E94;&#x5C4F;&#x5E55;&#x5927;&#x5C0F;&#xFF0C;&#x5199;&#x4E2A;&#x811A;&#x672C;&#x4FEE;&#x6539; Camere &#x7684; size: <code>camera.orthographicSize = Screen.height * 0.5f</code>. &#x8FD8;&#x6709;&#x7C92;&#x5B50;&#x7684; size &#x4E5F;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF1A;</p>
+<figure class="highlight cs hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">float</span> multiplier = Screen.height / canvasScaler.referenceResolution.y;</span><br><span class="line"><span class="hljs-keyword">var</span> particles = GetComponentsInChildren&lt;ParticleSystem&gt;();</span><br><span class="line"><span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">var</span> p <span class="hljs-keyword">in</span> particles)</span><br><span class="line">{</span><br><span class="line">    <span class="hljs-keyword">var</span> main = p.main;</span><br><span class="line">    main.startSizeMultiplier *= multiplier;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x7136;&#x540E;&#x7ED9;&#x539F;&#x6765; Render Type &#x4E3A; Base &#x7684; Camera &#x7684; Stack &#x91CC;&#x52A0;&#x4E0A;&#x521A;&#x521A;&#x65B0;&#x5EFA;&#x7684; Camera.</p>
+<p><img src="/2020/09/03/%E7%AE%80%E6%B4%81%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0-UI-%E7%89%B9%E6%95%88/stack_camera.png" alt="stack_camera"></p>
+<p>&#x7136;&#x540E;&#x628A; Particle System &#x505A;&#x7684;&#x7C92;&#x5B50;&#x7279;&#x6548;&#x6302;&#x5230;&#x60F3;&#x8981;&#x6302;&#x5230;&#x7684; UI &#x5BF9;&#x8C61;&#x4E0B;&#x9762;&#xFF0C;&#x8C03;&#x6574; Start Size &#x5230;&#x591F;&#x5927;&#xFF0C;&#x628A; Layer &#x8BBE;&#x4E3A; UI. &#x60F3;&#x8981;&#x8C03;&#x6574;&#x7C92;&#x5B50;&#x548C; UI &#x7684;&#x524D;&#x540E;&#x5173;&#x7CFB;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x7C92;&#x5B50; Renderer &#x7684; Order in Layer.</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Unity/">#Unity</a></span>
     
     </div>
     
@@ -177,12 +192,12 @@
     <div class="columns is-mobile is-multiline article-nav">
         <span class="column is-12-mobile is-half-desktop  article-nav-prev">
             
-            <a href="/2020/06/30/%E5%A4%84%E7%90%86%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8/index.html">处理角色移动</a>
+            <a href="/2020/09/07/%E6%89%A9%E5%B1%95-Button-%E5%BA%94%E8%AF%A5%E7%94%A8%E7%BB%A7%E6%89%BF/index.html">扩展 Button 应该用继承</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2020/04/27/%E5%9C%A8%E6%9E%81%E7%AE%80%E7%9A%84%E9%81%93%E8%B7%AF%E4%B8%8A%E8%B6%8A%E8%B5%B0%E8%B6%8A%E8%BF%9C/index.html">在极简的道路上越走越远</a>
+            <a href="/2020/08/21/%E4%BB%8E%E7%AC%AC%E4%B9%9D%E4%B8%96%E4%BB%A3%E6%B8%B8%E6%88%8F%E6%9C%BA%E7%9C%8B%E6%9C%AA%E6%9D%A5/index.html">从第九世代游戏机看未来</a>
             
         </span>
     </div>
